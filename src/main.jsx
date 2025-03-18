@@ -5,7 +5,7 @@ import { UserContextProvider } from './context/UserContext.jsx';
 import { CourseContextProvider } from './context/CourseContext.jsx';
 import { LiveClassContextProvider } from "./context/LiveClassContext"
 
-export const server = "http://localhost:5000";
+export const server = "https://elerning-server-k8ar.onrender.com";
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
