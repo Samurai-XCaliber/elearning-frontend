@@ -18,8 +18,14 @@ const categories = [
 
 const AdminCourses = ({ user }) => {
     const navigate = useNavigate();
+    const [searchQuery, setSearchQuery] = useState(""); 
+    const { courses, fetchCourses } = CourseData();
 
     if(user && user.role !== "admin") return navigate("/");
+
+    const filteredCourses = courses.filter((course) =>
+        course.title.toLowerCase().includes(searchQuery.toLowerCase())
+      );
 
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
@@ -43,9 +49,7 @@ const AdminCourses = ({ user }) => {
       }; 
     };
 
-    const { courses, fetchCourses } = CourseData();
-
-    const submitHandler = async (e) => {
+   const submitHandler = async (e) => {
         e.preventDefault();
         setBtnLoading(true);
 
@@ -82,35 +86,68 @@ const AdminCourses = ({ user }) => {
         }
     };
    
-  return ( <Layout>
-    <div className="admin-courses">
+  return ( 
+    <Layout>
+      <div className="admin-courses">
         <div className="left">
-            <h1>All Courses</h1>
-            <div className="dashboard-content">
-                {
-                    courses && courses.length>0 ? ( courses.map((e)=>{
-                        return <CourseCard key={e._id} course={e}/>;
-                    }) ):( <p>No Courses Yet</p>
-                )}
-            </div>
+          <h1>All Courses</h1>
+          {/* Search Bar */}
+          <div className="search-container">
+            <input
+              type="text"
+              placeholder="Search courses..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="search-input"
+            />
+          </div>
+          <div className="dashboard-content">
+            {filteredCourses.length > 0 ? (
+              filteredCourses.map((course) => (
+                <CourseCard key={course._id} course={course} />
+              ))
+            ) : (
+              <p>No Courses Yet</p>
+            )}
+          </div>
         </div>
-
+         
         <div className="right">
             <div className="add-course">
                 <div className="course-form">
                     <h2>Add Course</h2>
                     <form onSubmit={submitHandler}>
                         <label htmlFor="text">Title</label>
-                        <input type="text" value={title} onChange={(e)=>setTitle(e.target.value)} required />
+                        <input 
+                        type="text" 
+                        value={title} 
+                        onChange={(e)=>setTitle(e.target.value)} 
+                        required 
+                        />
 
                         <label htmlFor="text">Description</label>
-                        <input type="text" value={description} onChange={(e)=>setDescription(e.target.value)} required />
+                        <input 
+                        type="text" 
+                        value={description} 
+                        onChange={(e)=>setDescription(e.target.value)} 
+                        required 
+                        />
 
                         <label htmlFor="text">Price</label>
-                        <input type="number" value={price} onChange={(e)=>setPrice(e.target.value)} required />
+                        <input 
+                        type="number" 
+                        value={price} 
+                        onChange={(e)=>setPrice(e.target.value)} 
+                        required 
+                        />
 
                         <label htmlFor="text">createdBy</label>
-                        <input type="text" value={createdBy} onChange={(e)=>setCreatedBy(e.target.value)} required />
+                        <input 
+                        type="text" 
+                        value={createdBy} 
+                        onChange={(e)=>setCreatedBy(e.target.value)} 
+                        required 
+                        />
 
                         <select 
                         value={category}
@@ -125,12 +162,23 @@ const AdminCourses = ({ user }) => {
                         </select>
 
                         <label htmlFor="text">Duration</label>
-                        <input type="number" value={duration} onChange={(e)=>setDuration(e.target.value)} required />
+                        <input 
+                        type="number" 
+                        value={duration} 
+                        onChange={(e)=>setDuration(e.target.value)} 
+                        required 
+                        />
 
                         <input type="file" required onChange={changeImageHandler} />
                         {imagePrev && <img src={imagePrev} alt="" width={300} />}
 
-                        <button type="submit" disabled={btnLoading} className="common-btn">{btnLoading?"Please Wait...":"Add"}</button>
+                        <button 
+                        type="submit" 
+                        disabled={btnLoading} 
+                        className="common-btn"
+                        >
+                            {btnLoading?"Please Wait...":"Add"}
+                        </button>
                     </form>
                 </div>
             </div>

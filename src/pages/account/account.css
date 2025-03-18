@@ -24,5 +24,10 @@
                 color: #8a4baf;
             }
         } 
+        .common-btn{
+            border-radius: 20px;
+            
+        }
     }
 }
+

@@ -28,6 +28,8 @@
 
         button{
             padding: 12px 24px;
+            border-radius: 25px;
+            max-width: 400px;
 
         }
     }

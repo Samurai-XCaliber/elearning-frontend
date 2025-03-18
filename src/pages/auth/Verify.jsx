@@ -13,7 +13,7 @@ const Verify = () => {
   function onChange(value) {
     console.log("Captcha value:", value);
     setShow(true);
-  }  
+  }
 
   const submitHandler = async(e) => {
     e.preventDefault();
@@ -25,12 +25,16 @@ const Verify = () => {
             <h2>Verify Account</h2>
             <form onSubmit={submitHandler}>
                 <label htmlFor="otp">Otp</label>
-                <input type="number" value={otp} onChange={e=>setOtp(e.target.value)} required />
-                <ReCAPTCHA
-    sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
-    onChange={onChange}
-  />,
-                {show && (<button disabled={btnLoading} type="submit" className="common-btn">{btnLoading?"Please Wait...":"Verify"}</button>)}
+                <input 
+                  type="number" 
+                  value={otp} 
+                  onChange={e=>setOtp(e.target.value)} 
+                  required 
+                />
+                <ReCAPTCHA sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI" onChange={onChange} />,
+                 {show && (<button disabled={btnLoading} type="submit" className="common-btn">
+                    {btnLoading?"Please Wait...":"Verify"}
+                  </button>)}
             </form>
             <p>
                 Go to <Link to="/login">Login</Link> page

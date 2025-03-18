@@ -1,3 +1,25 @@
+h1{
+    text-align: center;
+    color: #8a4baf;
+}
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.search-input {
+    width: 50%;
+    max-width: 400px;
+    padding: 10px;
+    border: 2px solid #8a4baf;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+}
+
+
 .courses{
     padding: 80px 0;
     text-align: center;
@@ -15,4 +37,9 @@
         justify-content: center;
         gap: 30px;
     }
+}
+
+h1{
+    text-align: center;
+    color: #8a4baf;
 }

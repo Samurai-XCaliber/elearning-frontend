@@ -1,8 +1,73 @@
-.users{
-    width: 350px;
-    overflow-x: auto;
-    white-space: nowrap;
-    margin: 20px auto;
-    min-height: 80vh;
-    border: solid gray 1px;
-}
+.users {
+    width: 90%;
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #ffffff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    text-align: center;
+  }
+  
+  h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  thead {
+    background: red;
+    color: white;
+  }
+  
+  thead tr {
+    height: 50px;
+  }
+  
+  td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+  }
+  
+  tbody tr:hover {
+    background: #f1f1f1;
+  }
+  
+  .common-btn {
+    background: #8a4baf;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+  }
+  
+  .common-btn:hover {
+    background: #8a4baf;
+  }
+  
+  @media (max-width: 600px) {
+    table {
+      font-size: 14px;
+    }
+  
+    td {
+      padding: 8px;
+    }
+  
+    .common-btn {
+      padding: 6px 10px;
+    }
+  }
+  

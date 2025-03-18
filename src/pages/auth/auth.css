@@ -38,4 +38,34 @@
             }
         }
     }
+    .common-btn{
+      border-radius: 20px;
+    }
 }
+
+.password-input {
+    position: relative;
+    width: 100%;
+  }
+  
+  .password-input input {
+    width: 100%;
+    padding-right: 40px;
+    /* Add padding to prevent text overlap */
+  }
+  
+  .toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 33%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2em;
+    color: #555;
+  }
+
+  .toggle-password:hover {
+    color: #000;
+  }

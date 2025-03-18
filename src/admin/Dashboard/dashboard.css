@@ -16,5 +16,9 @@
         &:hover{
             background-color: #432456;
         }
+
+        p{
+            color: white;
+        }
     }
 }

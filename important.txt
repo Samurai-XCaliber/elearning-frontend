@@ -1,0 +1,42 @@
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+
+
+npm create vite@latest
+
+√ Project name: ... sample
+√ Select a framework: » React
+√ Select a variant: » JavaScript + SWC
+
+ cd sample
+  npm install
+  npm run dev
+
+➜  Local:   http://localhost:5173/
+  ➜  Network: use --host to expose
+  ➜  press h + enter to show help
+
+Shortcuts
+  press r + enter to restart the server
+  press u + enter to show server url
+  press o + enter to open in browser
+  press c + enter to clear console
+  press q + enter to quit
+
+
+projects -backend
+
+npm i nodemailer
+
+npm i multer
+
+npm i uuid
+
+npm i razorpay
+
+npm i cors
+
+
+
+frontend
+
+npm i react-router-dom react-icons

@@ -11,14 +11,14 @@ const Home = () => {
         <div className="home-content">
           <h1>Welcome to our E-learning platform</h1>
           <p>Learn, Grow, Excel</p>
-          <button onClick={() => navigate("/courses")} 
-          className="common-btn">
+          <button onClick={() => navigate("/courses")} className="common-btn">
             Get Started
-            </button>
+          </button>
         </div>
       </div>
       <Testimonials/>
     </div>
   );
 };
+
 export default Home;

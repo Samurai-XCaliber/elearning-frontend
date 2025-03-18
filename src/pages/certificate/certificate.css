@@ -1,0 +1,98 @@
+.certificate-page{
+  padding: 14px;
+}
+
+
+.certificate {
+  position: relative;
+  width: 80%;
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 45px;
+  text-align: center;
+  border: 3px solid #333;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Logo container */
+.certificate-logos {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ISO logo (right top corner) */
+.iso-logo {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  width: 80px; /* Adjust size */
+  height: auto;
+}
+
+/* E-Learning logo (left top corner) */
+.elearning-logo {
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  width: 80px; /* Adjust size */
+  height: auto;
+}
+
+/* Additional certificate styles */
+.certificate h1 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 40px; /* Ensures logos don't overlap text */
+}
+
+.certificate h2 {
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+.certificate p {
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+.common-bt {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.common-bt:hover {
+  background-color: #0056b3;
+}
+
+/* Add these styles at the end of your certificate.css */
+
+/* Certificate provider and date alignment */
+.certificate > p:nth-last-child(2) { /* Target certificate provider paragraph */
+  text-align: left;
+  margin-left: 20px;
+  width: 100%;
+}
+
+.certificate > p:last-child { /* Target date paragraph */
+  text-align: right;
+  margin-right: 20px;
+  width: 100%;
+}
+
+/* Download button positioning */
+.common-bt {
+  display: block;
+  margin: 30px auto 0;
+  width: fit-content;
+}

@@ -1,32 +1,51 @@
-.payment-success-page{
+.payment-success-page {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 75vh;
     background-color: #f5f5f5;
+}
 
-    .success-message{
-        background-color: #fff;
-        padding: 30px;
-        border-radius: 10px;
-        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-        text-align: center;
-        width: 300px;
-    }
+.success-message {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Ensures all child elements are centered */
+    justify-content: center;
+}
 
-    h2{
-        font-size: 24px;
-        color: #8a4baf;
-        margin-bottom: 15px;
-    }
+h2 {
+    font-size: 24px;
+    color: #8a4baf;
+    margin-bottom: 15px;
+}
 
-    p{
-        font-size: 16px;
-        color: #8a4baf;
-        margin-bottom: 20px;
-    }
+p {
+    font-size: 16px;
+    color: #8a4baf;
+    margin-bottom: 20px;
+}
 
-    a{
-        text-decoration: none;
-    }
+.common-btn {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #8a4baf;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    width: 100%;
+    max-width: 200px; /* Prevents it from stretching too much */
+}
+
+.common-bt:hover {
+    background-color: #6b3b8f;
 }

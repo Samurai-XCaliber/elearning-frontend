@@ -10,7 +10,7 @@ const AdminDashbord = ({user}) => {
 
     if(user && user.role !== "admin") return navigate("/");
 
-    const [stats, setStats] = useState([])
+    const [stats, setStats] = useState([]);
 
     async function fetchStats(){
         try {
@@ -29,7 +29,8 @@ const AdminDashbord = ({user}) => {
     useEffect(()=>{
         fetchStats();
     },[]);
-  return (<div>
+  return (
+  <div>
     <Layout>
         <div className="main-content">
             <div className="box">

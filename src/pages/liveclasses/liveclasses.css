@@ -1,0 +1,35 @@
+.live-classes {
+  padding: 152px;
+  text-align: center;
+}
+
+.live-classes h1,
+.live-classes h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 20px;
+  max-width: 600px;
+}
+
+.search-input {
+  width: 50%;
+  max-width: 400px;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.live-class-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}

@@ -30,4 +30,8 @@
         color: #666;
         margin-bottom: 5px;
     }
+
+    button{
+        border-radius: 20px;
+    }
 }

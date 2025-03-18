@@ -44,8 +44,7 @@ const Testimonials = () => {
     <section className="testimonials">
         <h2>What our students say</h2>
         <div className="testmonials-cards">
-            {
-                testimonialsData.map((e)=>(
+            {testimonialsData.map((e)=>(
                     <div className="testimonial-card" key={e.id}>
                         <div className="student-image">
                             <img src={e.image} alt="" />
@@ -56,11 +55,10 @@ const Testimonials = () => {
                             <p className="position">{e.position}</p>
                         </div>
                     </div>
-                ))
-            }
+                ))}
         </div>
     </section>
-  )
+  );
 };
 
 export default Testimonials;

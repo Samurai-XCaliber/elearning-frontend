@@ -1,18 +1,29 @@
 import React from "react";
 import "./footer.css";
-import { AiFillFacebook,  AiFillTwitterSquare, AiFillInstagram } from "react-icons/ai";
+import { 
+  AiFillFacebook, 
+  AiFillTwitterSquare, 
+  AiFillInstagram ,
+} from "react-icons/ai";
 
 const Footer = () => {
   return (
     <footer>
         <div className="footer-content">
             <p>
-                &copy; 2025 Your E-Learning Platform. All rights reserved. <br/> Made with ❤️ <a href="">Samviswas</a>
+                &copy; 2025 Your E-Learning Platform. All rights reserved. <br/> Made 
+                with ❤️ <a href="">Samviswas</a>
             </p>
             <div className="social-links">
-                <a href=""><AiFillFacebook/></a>
-                <a href=""><AiFillTwitterSquare/></a>
-                <a href=""><AiFillInstagram /></a>
+                <a href="">
+                  <AiFillFacebook/>
+                </a>
+                <a href="">
+                  <AiFillTwitterSquare/>
+                </a>
+                <a href="">
+                  <AiFillInstagram />
+                </a>
             </div>
         </div>
     </footer>
