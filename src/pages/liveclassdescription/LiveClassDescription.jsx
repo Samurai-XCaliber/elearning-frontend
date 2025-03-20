@@ -1,3 +1,5 @@
+"use client"
+
 import { useEffect, useState } from "react"
 import "./liveclassdescription.css"
 import { useNavigate, useParams } from "react-router-dom"
@@ -15,10 +17,31 @@ const LiveClassDescription = ({ user }) => {
   const { fetchUser } = UserData()
   const { fetchLiveClass, liveClass, fetchLiveClasses } = LiveClassData()
   const [remainingTime, setRemainingTime] = useState("")
+  const [isAvailable, setIsAvailable] = useState(true)
 
   useEffect(() => {
     fetchLiveClass(params.id)
   }, [params.id])
+
+  // Check if the class is available (not purchased by someone else)
+  useEffect(() => {
+    if (liveClass) {
+      const checkAvailability = async () => {
+        try {
+          const { data } = await axios.get(`${server}/api/live-class/check-availability/${params.id}`, {
+            headers: {
+              token: localStorage.getItem("token"),
+            },
+          })
+          setIsAvailable(data.isAvailable)
+        } catch (error) {
+          console.error("Error checking availability:", error)
+        }
+      }
+
+      checkAvailability()
+    }
+  }, [liveClass, params.id])
 
   // Calculate and update remaining time
   useEffect(() => {
@@ -47,6 +70,11 @@ const LiveClassDescription = ({ user }) => {
   }, [liveClass])
 
   const checkoutHandler = async () => {
+    if (!isAvailable) {
+      toast.error("This live class is no longer available for purchase.")
+      return
+    }
+
     const token = localStorage.getItem("token")
     setLoading(true)
 
@@ -140,6 +168,14 @@ const LiveClassDescription = ({ user }) => {
                 <button onClick={() => handleJoinClass(liveClass._id)} className="common-btn">
                   Join Class
                 </button>
+              ) : !isAvailable ? (
+                <button
+                  className="common-btn"
+                  disabled={true}
+                  style={{ backgroundColor: "#ccc", cursor: "not-allowed" }}
+                >
+                  Not Available
+                </button>
               ) : (
                 <button onClick={checkoutHandler} className="common-btn">
                   Buy Now
@@ -153,4 +189,5 @@ const LiveClassDescription = ({ user }) => {
   )
 }
 
-export default LiveClassDescription;
+export default LiveClassDescription
+
