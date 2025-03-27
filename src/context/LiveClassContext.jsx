@@ -15,14 +15,14 @@ export const LiveClassContextProvider = ({ children }) => {
         headers: {
           token: localStorage.getItem("token"),
         },
-      })
-
-      setLiveClasses(data.liveClasses)
+      });
+  
+      setLiveClasses(data.liveClasses); // Update the state with fetched data
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
   }
-
+  
   async function fetchLiveClass(id) {
     try {
       const { data } = await axios.get(`${server}/api/live-class/${id}`, {
