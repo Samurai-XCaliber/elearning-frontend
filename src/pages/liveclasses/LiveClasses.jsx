@@ -5,10 +5,15 @@ import LiveClassCard from "../../components/liveclasscard/LiveClassCard";
 import { UserData } from "../../context/UserContext";
 
 const LiveClasses = () => {
-  const { liveClasses } = LiveClassData();
+  const { liveClasses, fetchLiveClasses } = LiveClassData(); // Ensure fetchLiveClasses is available
   const { user } = UserData();
   const [searchQuery, setSearchQuery] = useState("");
   const [filteredLiveClasses, setFilteredLiveClasses] = useState([]);
+
+  // Fetch live classes on component mount
+  useEffect(() => {
+    fetchLiveClasses(); // Ensure live classes are fetched when the component is mounted
+  }, [fetchLiveClasses]);
 
   // Filter live classes based on search query and expiration
   useEffect(() => {
