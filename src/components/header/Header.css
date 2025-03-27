@@ -1,4 +1,4 @@
-header{
+header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -7,44 +7,68 @@ header{
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 0px;
-
-    .logo{
-        font-size: 25px;
-        font-weight: 600;
-        color: #8a4baf;
-
-        @media (max-width: 768px) {
-            font-size: 18px;
-        }
-    }
-
-    .link{
-        display: flex;
-        gap: 2rem;
-
-        @media (max-width: 768px) {
-            gap: 0.5rem;
-        }
-
-        a {
-            text-decoration: none;
-            color: #333;
-            transition: 0.3s;
-
-            &:hover {
-              color: #8a4baf;
-            }
-        }
-    }
 }
 
 .logo {
     display: flex;
     align-items: center;
     gap: 10px; /* Adjust spacing between image and text */
-  }
-  
-  .logo img {
+}
+
+.logo img {
     width: 40px; /* Adjust size as needed */
     height: auto;
-  }
+}
+
+.link {
+    display: flex;
+    gap: 2rem;
+}
+
+.link a {
+    text-decoration: none;
+    color: #333;
+    transition: 0.3s;
+}
+
+.link a:hover {
+    color: #8a4baf;
+}
+
+.menu-toggle {
+    display: none; /* Hide the menu toggle by default */
+}
+
+/* Mobile Media Screen */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Stack header elements vertically */
+        padding: 10px;
+    }
+
+    .menu-toggle {
+        display: block; /* Show the hamburger menu on mobile */
+        font-size: 24px;
+        cursor: pointer;
+        color: #333;
+    }
+
+    .link {
+        display: none; /* Initially hide links on mobile */
+        flex-direction: column; /* Stack links vertically */
+        gap: 10px;
+        width: 100%; /* Full width for the menu */
+        background-color: white; /* Background for the dropdown */
+        padding: 10px 0;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .link.active {
+        display: flex; /* Show links when active */
+    }
+
+    .link a {
+        text-align: center; /* Center align links */
+        padding: 10px 0;
+    }
+}
