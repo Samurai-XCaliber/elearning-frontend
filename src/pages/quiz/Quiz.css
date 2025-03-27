@@ -16,7 +16,7 @@
     font-size: 16px;
     max-width: 400px;
   }
-  
+
   .common-btn:hover {
     background-color: #8a4baf;
   }
@@ -37,8 +37,6 @@
 .quiz-item p {
   margin: 0 0 10px;
 }
-
-
 
 .quiz-question {
   margin-bottom: 20px;
@@ -97,4 +95,67 @@
 
 .quiz-form .common-btn {
   margin-top: 10px;
+}
+
+/* Mobile Media Screen */
+@media (max-width: 768px) {
+  .quiz-page {
+    padding: 20px; /* Adjust padding for smaller screens */
+  }
+
+  .quiz-list {
+    margin-bottom: 15px;
+  }
+
+  .common-btn {
+    width: 100%; /* Full width for buttons */
+    font-size: 14px; /* Adjust font size */
+    padding: 10px; /* Adjust padding */
+  }
+
+  .quiz-item {
+    padding: 10px; /* Adjust padding for quiz items */
+  }
+
+  .quiz-item h3 {
+    font-size: 1rem; /* Adjust font size for headings */
+  }
+
+  .quiz-item p {
+    font-size: 0.9rem; /* Adjust font size for descriptions */
+  }
+
+  .quiz-question h3 {
+    font-size: 1rem; /* Adjust font size for questions */
+  }
+
+  .quiz-question div {
+    margin-bottom: 8px; /* Adjust spacing */
+  }
+
+  .quiz-result {
+    padding: 10px; /* Adjust padding for results */
+  }
+
+  .quiz-result h2 {
+    font-size: 1.2rem; /* Adjust font size for result headings */
+  }
+
+  .quiz-result p {
+    font-size: 1rem; /* Adjust font size for result text */
+  }
+
+  .quiz-form {
+    padding: 15px; /* Adjust padding for the form */
+  }
+
+  .quiz-form h2 {
+    font-size: 1.2rem; /* Adjust font size for form headings */
+  }
+
+  .quiz-form input[type="text"],
+  .quiz-form select {
+    font-size: 0.9rem; /* Adjust font size for inputs */
+    padding: 6px; /* Adjust padding for inputs */
+  }
 }
