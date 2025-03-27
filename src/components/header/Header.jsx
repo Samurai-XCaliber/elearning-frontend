@@ -12,7 +12,7 @@ const Header = ({ isAuth }) => {
   return (
     <header>
       <div className="logo">
-        <img src="../../../public/E learning.png" alt="Logo" />
+        <img src="../../../public/E learning.svg" alt="Logo" />
         EDUSEI
       </div>
 
